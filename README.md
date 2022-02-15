@@ -1,1 +1,1 @@
-# ImbalanceClassification
+# Imbalance Classification
