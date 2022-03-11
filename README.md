@@ -11,6 +11,9 @@ Biased Sampling & Measurement Errors.
 * Compounding effect of label noise.
 * Compounding effect of data distribution.
 ## Evaluation Metrics:
+* Challenge of choosing metrics for classification, and how it is particularly difficult when there is a skewed class distribution.
+* How there are three main types of metrics for evaluating classifier models, referred to as rank, threshold, and probability.
+* How to choose a metric for imbalanced classification if you don't know where to start.
 ## Data Sampling:
 
 * Random Sampling
