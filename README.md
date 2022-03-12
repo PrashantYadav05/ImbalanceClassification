@@ -59,5 +59,9 @@ Not All Classification Errors Are Equal
 * Cost-Sensitive Learning
 * Cost-Sensitive Imbalanced Classification
 * Cost-Sensitive Methods
+
+## Probability Caliberation:
+
+## One-Class Classification
 ## Project: Phoneme Classification
 ## project: Microcalcification Classification
