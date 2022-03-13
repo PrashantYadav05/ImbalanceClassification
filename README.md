@@ -8,12 +8,19 @@ Biased Sampling & Measurement Errors.
 * Effect of skewed class distributions
 ## Challenge of Imbalanced Classification:
 * Compounding effect of dataset size.
-* Compounding effect of label noise.
+* Compounding effect of label noise (Label noise refers to examples that belong to one class that are labeled as another class)
 * Compounding effect of data distribution.
 ## Evaluation Metrics:
 * Challenge of choosing metrics for classification, and how it is particularly difficult when there is a skewed class distribution.
 * How there are three main types of metrics for evaluating classifier models, referred to as rank, threshold, and probability.
 * How to choose a metric for imbalanced classification if you don't know where to start.
+
+|                   | Positive Prediction | Negative Prediction |
+|-------------------|-------------------- |---------------------|
+|**Positive Class** | True Positive (TP)  | False Negative (FN) |
+|**Negative Class** | False Positive (FP) | True Negative (TN)  |
+
+Senitivity: 
 
 * Are you predicting probabilities?
   * Do you need class labels?
