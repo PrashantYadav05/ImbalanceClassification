@@ -77,6 +77,20 @@ The simplest undersampling technique involves randomly selecting examples from t
     * **SMOTE and Edited Nearest Neighbors Undersampling*** 
 
 ## Cost-Sensitive Learning
+Classifying a majority class as minority is typically far less of a problem than classifying a minority class as a majority.
+**Bank Loan Problem:** Denying a loan to a good customer is not as bad as giving a loan to a bad customer that may never repay it.
+**Cancer Diagnosis Problem:** It is better to diagnose a healthy patient with cancer and follow-up with more medical tests than it is to discharge a patient that has cancer.
+**Fraud Detection Problem:** Identifying good claims as fraudulent and following up with the customer is better than honoring
+fraudulent insurance claims. 
+It can see with these examples that misclassification errors are not desirable in general, but one type of misclassification is much worse than the other. Specifically predicting positive cases as a negative case is more harmful, more expensive, or worse in whatever way we want to measure the context of the target domain. As such, both the underrepresentation of the minority class in the training data and the increased importance on correctly identifying examples from the minority class make imbalanced classication one of the most challenging problems in applied machine learning.
+
+A subfield of machine learning that is focused on learning and using models on data that have uneven penalties or costs when making predictions and more. This field is generally referred to as **Cost-Sensitive Machine Learning**, or more simply Cost-Sensitive Learning.
+In cost-sensitive learning, a penalty associated with an incorrect prediction and is referred to as a cost. The goal of cost-sensitive learning is to minimize the cost of a model on the training dataset, where it is assumed that different types of prediction errors have a different and known associated cost.
+
+The existing machine learning algorithms can be modified to make use of the cost matrix. This might involve a modification that is unique to each algorithm and which can be quite time consuming to develop and test. Many such algorithm-specific augmentations have been proposed for popular algorithms, like decision trees and support vector machines. The scikit-learn Python machine learning library provides examples of these cost-sensitive extensions via the class weight argument on the **SVC** & **DecisionTreeClassifier** classifiers. Another more general approach to modifying existing algorithms is to use the costs as a
+penalty for misclassifition when the algorithms are trained. Given that most machine learning lgorithms are trained to minimize error, cost for misclassifition is added to the error or used o weigh the error during the training process.
+This approach can be used for iteratively trained algorithms, such as logistic regression and rtifial neural networks. The scikit-learn library provides examples of these cost-sensitive xtensions via the class weight argument on the **LogisticRegression** & **RidgeRegression** classifiers. 
+
 
 Not All Classification Errors Are Equal
 * Cost-Sensitive Learning
