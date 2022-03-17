@@ -86,16 +86,26 @@ It can see with these examples that misclassification errors are not desirable i
 
 A subfield of machine learning that is focused on learning and using models on data that have uneven penalties or costs when making predictions and more. This field is generally referred to as **Cost-Sensitive Machine Learning**, or more simply Cost-Sensitive Learning.
 In cost-sensitive learning, a penalty associated with an incorrect prediction and is referred to as a cost. The goal of cost-sensitive learning is to minimize the cost of a model on the training dataset, where it is assumed that different types of prediction errors have a different and known associated cost.
-
+### **Cost-Sensitive Algorithms**
 The existing machine learning algorithms can be modified to make use of the cost matrix. This might involve a modification that is unique to each algorithm and which can be quite time consuming to develop and test. Many such algorithm-specific augmentations have been proposed for popular algorithms, like decision trees and support vector machines. The scikit-learn Python machine learning library provides examples of these cost-sensitive extensions via the class weight argument on the **SVC** & **DecisionTreeClassifier** classifiers. Another more general approach to modifying existing algorithms is to use the costs as a
 penalty for misclassifition when the algorithms are trained. Given that most machine learning lgorithms are trained to minimize error, cost for misclassifition is added to the error or used o weigh the error during the training process.
 This approach can be used for iteratively trained algorithms, such as logistic regression and rtifial neural networks. The scikit-learn library provides examples of these cost-sensitive xtensions via the class weight argument on the **LogisticRegression** & **RidgeRegression** classifiers. 
+The Keras Python Deep Learning library also provides access to this use of cost-sensitive augmentation for neural networks via the class weight argument on the fit() function when training models. Again, the line is blurred between cost-sensitive augmentations to algorithmsvs. imbalanced classification augmentations to algorithms when the inverse class distribution is used as the cost matrix. In the domain of cost-sensitive machine learning, these algorithms are referred to with the Cost-Sensitive prefix, e.g. *Cost-Sensitive Logistic Regression*, whereas in imbalanced-learning, such algorithms are referred to with a Class-Weighted prefix, e.g. *Class-Weighted Logistic Regression* or simply *Weighted Logistic Regression*.
+### Cost-Sensitive Ensembles
+### Cost-Sensitive Logistic Regression
+* Weighted Logistic Regression with Scikit-Learn.
+* Grid Search Weighted Logistic Regression.
+### Cost-Sensitive Decision Trees
+The decision tree algorithm involves growing a tree to classify examples from the training dataset. The tree can be thought to divide the training dataset, where examples progress down the decision points of the tree to arrive in the leaves of the tree and are assigned a class label.The tree is constructed by splitting the training dataset using values for variables in the dataset. At each point, the split in the data that results in the purest (least mixed) groups ofexamples is chosen in a greedy manner. Here, purity means a clean separation of examples intogroups where a group of examples of all 0 or all 1 class is the purest, and a 50-50 mixture ofboth classes is the least pure. Purity is most commonly calculated using Gini impurity, althoughit can also be calculated using entropy.The calculation of a purity measure involves calculating the probability of an example of agiven class being misclassified by a split. Calculating these probabilities involves summing thenumber of examples in each class within each group. The splitting criterion can be updated to
+not only take the purity of the split into account, but also be weighted by the importance of
+each class.
+* Grid Search Weighted Decision Tree
 
-
-Not All Classification Errors Are Equal
-* Cost-Sensitive Learning
-* Cost-Sensitive Imbalanced Classification
-* Cost-Sensitive Methods
+### Cost-Sensitive Support Vector Machines
+* Grid Search Weighted SVM
+### Cost-Sensitive Deep Learning in Keras
+### Cost-Sensitive Gradient Boosting with XGBoost
+* Tune the Class Weighting Hyperparameter:
 
 ## Probability Caliberation:
 
