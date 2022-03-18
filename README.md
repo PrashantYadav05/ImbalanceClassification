@@ -106,7 +106,7 @@ each class.
 ### Cost-Sensitive Deep Learning in Keras
 ### Cost-Sensitive Gradient Boosting with XGBoost
 * Tune the Class Weighting Hyperparameter:
-
+## Probability Threshold Moving
 ## Probability Caliberation:
 
 ## One-Class Classification
